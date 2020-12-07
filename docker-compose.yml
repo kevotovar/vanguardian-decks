@@ -12,7 +12,7 @@ services:
       - MONGO_USERNAME=admin
       - MONGO_PASSWORD=password
       - MONGO_HOSTNAME=db
-      - MONGO_PORT=2017
+      - MONGO_PORT=27017
       - MONGO_DB=vanguard
     ports:
       - '3000:3000'
@@ -32,12 +32,13 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=admin
       - MONGO_INITDB_ROOT_PASSWORD=password
+      - MONGO_INITDB_DATABASE=vanguard
     volumes:
       - dbdata:/data/db
     networks:
       - vanguardians
     ports:
-      - '2017:2017'
+      - '27017:27017'
 
 networks:
   vanguardians:
