@@ -7,8 +7,12 @@
     "start": "next start"
   },
   "dependencies": {
+    "@apollo/client": "^3.3.4",
     "apollo-server-micro": "^2.19.0",
     "axios": "^0.21.0",
+    "deepmerge": "^4.2.2",
+    "graphql-compose": "^7.23.0",
+    "graphql-compose-mongoose": "^9.0.0",
     "mongoose": "^5.11.4",
     "next": "latest",
     "prettier": "^2.2.1",

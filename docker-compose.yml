@@ -1,29 +1,29 @@
 version: '3.8'
 
 services:
-  nodejs:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    image: nodejs
-    container_name: nodejs
-    restart: unless-stopped
-    environment:
-      - MONGO_USERNAME=admin
-      - MONGO_PASSWORD=password
-      - MONGO_HOSTNAME=db
-      - MONGO_PORT=27017
-      - MONGO_DB=vanguard
-    ports:
-      - '3000:3000'
-    volumes:
-      - .:/home/node/app
-      - node_modules:/home/node/app/node_modules
-    networks:
-      - vanguardians
-    command: ./wait-for.sh db:27017 -- npm run dev
-    depends_on:
-      - db
+  # nodejs:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   image: nodejs
+  #   container_name: nodejs
+  #   restart: unless-stopped
+  #   environment:
+  #     - MONGO_USERNAME=admin
+  #     - MONGO_PASSWORD=password
+  #     - MONGO_HOSTNAME=db
+  #     - MONGO_PORT=27017
+  #     - MONGO_DB=vanguard
+  #   ports:
+  #     - '3000:3000'
+  #   volumes:
+  #     - .:/home/node/app
+  #     - node_modules:/home/node/app/node_modules
+  #   networks:
+  #     - vanguardians
+  #   command: ./wait-for.sh db:27017 -- npm run dev
+  #   depends_on:
+  #     - db
 
   db:
     image: mongo:4.1.8-xenial
