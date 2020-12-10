@@ -17,8 +17,9 @@ services:
     ports:
       - '3000:3000'
     volumes:
-      - .:/home/node/app
-      - node_modules:/home/node/app/node_modules
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+      - /usr/src/app/.next
     networks:
       - vanguardians
     command: npm run dev

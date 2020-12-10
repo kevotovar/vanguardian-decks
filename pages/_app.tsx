@@ -1,7 +1,7 @@
-
 import { ApolloProvider } from '@apollo/client'
-import { useApollo } from '../lib/apolloClient'
 
+import Container from '../components/layout/Container'
+import { useApollo } from '../lib/apolloClient'
 import '../styles/global.css'
 
 export default function App({ Component, pageProps }) {
@@ -9,7 +9,9 @@ export default function App({ Component, pageProps }) {
 
   return (
     <ApolloProvider client={apolloClient}>
-      <Component {...pageProps} />
+      <Container>
+        <Component {...pageProps} />
+      </Container>
     </ApolloProvider>
   )
 }
